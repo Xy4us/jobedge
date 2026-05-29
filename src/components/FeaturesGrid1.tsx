@@ -7,27 +7,25 @@ import { fadeInDirection } from "@/utils/motion";
 
 const features = [
   {
-    title: "AI-Powered Lead Scoring",
+    title: "Create tailored CVs & check ATS compliance",
     description:
-      "Automatically rank and prioritize leads based on engagement, fit, and intent signals so your team focuses on the right prospects.",
+      "Optimize your resume dynamically to align with job descriptions. Identify missing keywords and correct formatting issues to rank highly on applicant tracking systems.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path
-          d="M11 2L13.5 7.5H19L14.5 11L16.5 17L11 13.5L5.5 17L7.5 11L3 7.5H8.5L11 2Z"
-          stroke="#FF6B00"
-          strokeWidth="1.8"
-          strokeLinejoin="round"
-          fill="none"
-        />
+        <rect x="3" y="2" width="16" height="18" rx="2" stroke="#FF6B00" strokeWidth="1.8" />
+        <line x1="7" y1="7" x2="15" y2="7" stroke="#FF6B00" strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="7" y1="11" x2="15" y2="11" stroke="#FF6B00" strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="7" y1="15" x2="11" y2="15" stroke="#FF6B00" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M13 14l2 2 3-3" stroke="#FF6B00" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     tag: "AI",
     large: false,
   },
   {
-    title: "Smart Email Sequences",
+    title: "Cover Letter aligned with Job description",
     description:
-      "Create personalized outreach campaigns that adapt in real-time based on prospect behavior and response patterns.",
+      "Generate persuasive, targeted cover letters that match the tone and requirements of your target role. Grab the attention of recruiters with personalized copy.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <rect
@@ -51,9 +49,9 @@ const features = [
     large: false,
   },
   {
-    title: "Deal Pipeline Tracking",
+    title: "Online Assessments Practice",
     description:
-      "Visualize your entire sales pipeline at a glance. Track every opportunity from first touch to closed deal with real-time status updates.",
+      "Master Numerical, Situational Judgement Tests (SJTs), Verbal Reasoning, Logical Reasoning, and many other corporate assessments using high-fidelity simulated tests.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <rect x="2" y="14" width="4" height="6" rx="1" fill="#FF6B00" />
@@ -78,12 +76,12 @@ const features = [
       </svg>
     ),
     tag: "Analytics",
-    large: true,
+    large: false,
   },
   {
-    title: "Meeting Scheduler",
+    title: "Virtual Interview Practice",
     description:
-      "Remove the back-and-forth. Let prospects book meetings directly into your calendar with intelligent availability detection.",
+      "Polish your delivery using mock sessions covering competency-based, strengths-based, employer-based, and sector-based questions with instant pacing guidance.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <rect
@@ -114,9 +112,9 @@ const features = [
     large: false,
   },
   {
-    title: "CRM Integrations",
+    title: "Virtual Assessment Center Simulation",
     description:
-      "Sync seamlessly with Salesforce, HubSpot, and 50+ tools. Keep your data in sync automatically without manual updates.",
+      "Navigate complex final-stage selection days. Participate in comprehensive presentation exercises, interactive group roleplay simulations, and high-intensity business case study exercises.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <circle cx="11" cy="11" r="4" stroke="#FF6B00" strokeWidth="1.8" />
@@ -135,31 +133,6 @@ const features = [
       </svg>
     ),
     tag: "Integrations",
-    large: false,
-  },
-  {
-    title: "Revenue Forecasting",
-    description:
-      "Get accurate revenue predictions powered by machine learning. Plan confidently with AI-driven forecasts based on historical data.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path
-          d="M3 16L8 10L12 13L17 7"
-          stroke="#FF6B00"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M17 4v3h-3"
-          stroke="#FF6B00"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    tag: "AI",
     large: true,
   },
 ];

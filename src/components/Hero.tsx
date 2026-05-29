@@ -12,11 +12,14 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative flex flex-col items-center justify-start pt-32 pb-0 overflow-hidden">
+    <section
+      id="home"
+      className="relative flex flex-col items-center justify-start pt-32 pb-0 overflow-hidden"
+    >
       <div className="absolute inset-0 -z-10 ">
         <Aurora
           colorStops={["#007bff", "#ffffff", "#ffcc33"]}
-          blend={0.009}
+          blend={0.0009}
           amplitude={0.25}
           speed={1.5}
         />
@@ -76,9 +79,9 @@ export default function Hero() {
           animate={inView ? "visible" : "hidden"}
           className="text-[52px] sm:text-[64px] md:text-[72px] font-medium leading-[1.05] tracking-[-0.03em] text-gray-900 mb-6 "
         >
-          Stand out with an edge
+          Your Edge To Every
           <br />
-          in every opportunity
+          Job Opportunity
         </motion.h1>
 
         {/* Subtext */}
