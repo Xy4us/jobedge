@@ -18,9 +18,9 @@ export default function Home() {
       <Hero />
       <LogoStrip />
       <FeaturesGrid1 />
-      <FeaturesGrid2 />
-      <FeaturesDark1 />
-      <FeaturesDark2 />
+      {/* <FeaturesGrid2 /> */}
+      {/* <FeaturesDark1 /> */}
+      {/* <FeaturesDark2 /> */}
       <Pricing />
       <Testimonials />
       <FAQ />

@@ -27,7 +27,9 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const handleLinkClick = (
@@ -83,7 +85,7 @@ export default function Navbar() {
                   key={link}
                   href={`#${link.toLowerCase()}`}
                   onClick={(e) => handleLinkClick(e, `#${link.toLowerCase()}`)}
-                  className="px-4 py-2 text-[14px] font-medium text-gray-600 hover:text-gray-900 transition-all duration-150"
+                  className="px-4 py-2 text-[14px] font-medium text-gray-600 hover:text-text-hover transition-all duration-400 ease-in-out"
                 >
                   {link}
                 </a>
@@ -94,7 +96,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-3">
               <a
                 href="#"
-                className="text-[14px] font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-[14px] font-medium text-gray-600 hover:text-text-hover transition-all duration-400 ease-in-out"
               >
                 Sign In
               </a>
@@ -138,7 +140,12 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setMobileOpen(false)}
-              style={{ position: "fixed", inset: 0, zIndex: 190, background: "rgba(0,0,0,0.55)" }}
+              style={{
+                position: "fixed",
+                inset: 0,
+                zIndex: 190,
+                background: "rgba(0,0,0,0.55)",
+              }}
             />
 
             {/* Right-side drawer — slides in from the right */}
@@ -168,16 +175,52 @@ export default function Navbar() {
             >
               {/* Top: Logo + close button */}
               <div>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "32px", paddingBottom: "16px", borderBottom: "1px solid #f0f0f0" }}>
-                  <Link href="/" onClick={(e) => { setMobileOpen(false); handleLogoClick(e); }}>
-                    <Image width={60} height={60} src="/logo.png" alt="JobEdge Logo" />
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginBottom: "32px",
+                    paddingBottom: "16px",
+                    borderBottom: "1px solid #f0f0f0",
+                  }}
+                >
+                  <Link
+                    href="/"
+                    onClick={(e) => {
+                      setMobileOpen(false);
+                      handleLogoClick(e);
+                    }}
+                  >
+                    <Image
+                      width={60}
+                      height={60}
+                      src="/logo.png"
+                      alt="JobEdge Logo"
+                    />
                   </Link>
                   <button
                     onClick={() => setMobileOpen(false)}
-                    style={{ padding: "8px", color: "#6b7280", borderRadius: "8px", border: "none", background: "transparent", cursor: "pointer" }}
+                    style={{
+                      padding: "8px",
+                      color: "#6b7280",
+                      borderRadius: "8px",
+                      border: "none",
+                      background: "transparent",
+                      cursor: "pointer",
+                    }}
                     aria-label="Close menu"
                   >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
@@ -185,7 +228,13 @@ export default function Navbar() {
                 </div>
 
                 {/* Nav links */}
-                <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "4px",
+                  }}
+                >
                   {navLinks.map((link) => (
                     <a
                       key={link}
@@ -194,18 +243,40 @@ export default function Navbar() {
                         setMobileOpen(false);
                         handleLinkClick(e, `#${link.toLowerCase()}`);
                       }}
-                      style={{ display: "block", padding: "12px", fontSize: "15px", fontWeight: 600, color: "#374151", borderRadius: "8px", textDecoration: "none" }}
+                      style={{
+                        display: "block",
+                        padding: "12px",
+                        fontSize: "15px",
+                        fontWeight: 600,
+                        color: "#374151",
+                        borderRadius: "8px",
+                        textDecoration: "none",
+                      }}
                     >
                       {link}
                     </a>
                   ))}
 
-                  <div style={{ height: "1px", background: "#f0f0f0", margin: "12px 0" }} />
+                  <div
+                    style={{
+                      height: "1px",
+                      background: "#f0f0f0",
+                      margin: "12px 0",
+                    }}
+                  />
 
                   <a
                     href="#"
                     onClick={() => setMobileOpen(false)}
-                    style={{ display: "block", padding: "12px", fontSize: "15px", fontWeight: 600, color: "#374151", borderRadius: "8px", textDecoration: "none" }}
+                    style={{
+                      display: "block",
+                      padding: "12px",
+                      fontSize: "15px",
+                      fontWeight: 600,
+                      color: "#374151",
+                      borderRadius: "8px",
+                      textDecoration: "none",
+                    }}
                   >
                     Sign In
                   </a>
@@ -213,7 +284,20 @@ export default function Navbar() {
                   <a
                     href="#"
                     onClick={() => setMobileOpen(false)}
-                    style={{ display: "block", marginTop: "8px", width: "100%", padding: "12px", background: "#111827", color: "#ffffff", fontSize: "14px", fontWeight: 700, textAlign: "center", borderRadius: "8px", textDecoration: "none", boxSizing: "border-box" }}
+                    style={{
+                      display: "block",
+                      marginTop: "8px",
+                      width: "100%",
+                      padding: "12px",
+                      background: "#111827",
+                      color: "#ffffff",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      textAlign: "center",
+                      borderRadius: "8px",
+                      textDecoration: "none",
+                      boxSizing: "border-box",
+                    }}
                   >
                     Create Free Account
                   </a>
@@ -221,7 +305,16 @@ export default function Navbar() {
               </div>
 
               {/* Bottom: Copyright */}
-              <div style={{ paddingTop: "24px", borderTop: "1px solid #f0f0f0", fontSize: "11px", color: "#9ca3af", fontWeight: 500, letterSpacing: "0.05em" }}>
+              <div
+                style={{
+                  paddingTop: "24px",
+                  borderTop: "1px solid #f0f0f0",
+                  fontSize: "11px",
+                  color: "#9ca3af",
+                  fontWeight: 500,
+                  letterSpacing: "0.05em",
+                }}
+              >
                 &copy; 2026 JobEdge. All rights reserved.
               </div>
             </motion.div>

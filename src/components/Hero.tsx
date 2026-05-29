@@ -1,19 +1,34 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useRef } from "react";
 import Aurora from "@/components/Aurora";
 import AnimatedText from "./AnimatedText";
 import { useSafeInView } from "@/hooks/useSafeInView";
 import { fadeInDirection } from "@/utils/motion";
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
   const { ref, inView } = useSafeInView({
     triggerOnce: true,
   });
 
+  // Scroll-driven scale animation on the dashboard mockup
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Scale from 0.85 → 1 as hero scrolls into view (opacity remains 1)
+  const rawScale = useTransform(scrollYProgress, [0, 0.55], [0.85, 1]);
+
+  // useSpring adds a smooth lag — feels premium and cinematic
+  const scale = useSpring(rawScale, { stiffness: 80, damping: 20, mass: 0.5 });
+
   return (
     <section
       id="home"
+      ref={sectionRef}
       className="relative flex flex-col items-center justify-start pt-32 pb-0 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10 ">
@@ -124,13 +139,16 @@ export default function Hero() {
         >
           No Credit Card Required
         </motion.p>
+      </motion.div>
 
-        {/* Dashboard Mockup */}
+      {/* Dashboard Mockup — scales up as you scroll */}
+      <div className="relative z-10 w-full flex justify-center px-5 max-w-6xl mx-auto">
         <motion.div
           variants={fadeInDirection("up", 1.2)}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="w-full max-w-5xl relative"
+          style={{ scale }}
+          className="w-full relative"
         >
           {/* Glow behind mockup */}
           <div
@@ -334,7 +352,7 @@ export default function Hero() {
             </div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
