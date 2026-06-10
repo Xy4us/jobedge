@@ -10,7 +10,7 @@ const plans = [
   {
     name: "Starter",
     priceMonthly: 14.99,
-    priceYearly: 11.99,
+    priceQuarterly: 11.99,
     description: "For individuals and very small teams just getting started.",
     cta: "Get Started",
     ctaStyle: "border border-gray-200 bg-white text-gray-900 hover:bg-gray-50",
@@ -20,7 +20,7 @@ const plans = [
   {
     name: "Pro",
     priceMonthly: 25.99,
-    priceYearly: 19.99,
+    priceQuarterly: 19.99,
     description: "For growing teams that need AI-powered sales tools.",
     cta: "Get Started",
     ctaStyle: "bg-gray-900 text-white hover:button-hover-bg hover:text-black",
@@ -36,7 +36,7 @@ const plans = [
   {
     name: "Scale",
     priceMonthly: 49.49,
-    priceYearly: 34.65,
+    priceQuarterly: 34.65,
     description: "For high-volume sales teams that need enterprise power.",
     cta: "Get Started",
     ctaStyle: "border border-gray-200 bg-white text-gray-900 hover:bg-gray-50",
@@ -65,7 +65,7 @@ const CheckIcon = () => (
 );
 
 export default function Pricing() {
-  const [yearly, setYearly] = useState(false);
+  const [Quarterly, setQuarterly] = useState(false);
   const { ref, inView } = useSafeInView({
     triggerOnce: true,
   });
@@ -110,13 +110,13 @@ export default function Pricing() {
           >
             <span
               className={`text-[15px] font-semibold transition-colors duration-200 ${
-                !yearly ? "text-gray-900" : "text-gray-500"
+                !Quarterly ? "text-text-hover" : "text-gray-500"
               }`}
             >
               Monthly
             </span>
             <button
-              onClick={() => setYearly(!yearly)}
+              onClick={() => setQuarterly(!Quarterly)}
               className="w-13 h-7 bg-white border border-gray-200 rounded-full p-1 flex items-center cursor-pointer relative shadow-sm focus:outline-none transition-all duration-300 hover:border-gray-300"
               aria-label="Toggle billing plan"
             >
@@ -125,18 +125,18 @@ export default function Pricing() {
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
                 className="w-5 h-5 bg-gray-900 rounded-full"
                 style={{
-                  marginLeft: yearly ? "auto" : "0px",
+                  marginLeft: Quarterly ? "auto" : "0px",
                 }}
               />
             </button>
             <span
               className={`text-[15px] font-semibold transition-colors duration-200 ${
-                yearly ? "text-gray-900" : "text-gray-500"
+                Quarterly ? "text-text-hover" : "text-gray-500"
               }`}
             >
-              Yearly
+              Quarterly
             </span>
-            <span className="px-3 py-1 bg-text-hover text-white text-[11px] font-extrabold rounded-full tracking-wide shadow-sm uppercase animate-pulse">
+            <span className="px-3 py-1 bg-button-hover-bg text-black text-[11px] font-extrabold rounded-full tracking-wide shadow-sm uppercase animate-pulse">
               Save 20%
             </span>
           </motion.div>
@@ -149,7 +149,7 @@ export default function Pricing() {
               {
                 name,
                 priceMonthly,
-                priceYearly,
+                priceQuarterly,
                 description,
                 cta,
                 ctaStyle,
@@ -185,14 +185,14 @@ export default function Pricing() {
                   <div className="flex items-end gap-1.5 mb-2">
                     <AnimatePresence mode="wait">
                       <motion.span
-                        key={yearly ? "y" : "m"}
+                        key={Quarterly ? "y" : "m"}
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.2 }}
                         className="text-[38px] sm:text-[46px]  tracking-[-0.03em] text-gray-900 mb-4 font-medium"
                       >
-                        £{yearly ? priceYearly : priceMonthly}
+                        £{Quarterly ? priceQuarterly : priceMonthly}
                       </motion.span>
                     </AnimatePresence>
                     {priceMonthly > 0 && (
