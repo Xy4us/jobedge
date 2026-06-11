@@ -29,7 +29,7 @@ export default function Hero() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative flex flex-col items-center justify-start pt-32 pb-0 overflow-hidden"
+      className="relative flex flex-col items-center justify-start pt-32 pb-0 overflow-hidden py-2"
     >
       <div className="absolute inset-0 -z-10 ">
         <Aurora
@@ -185,7 +185,7 @@ export default function Hero() {
                     </svg>
                   </div>
                   <span className="text-[13px] font-bold text-gray-900">
-                    Filo
+                    JobEdge
                   </span>
                 </div>
                 {[
@@ -197,11 +197,10 @@ export default function Hero() {
                 ].map(({ icon, label, active }) => (
                   <div
                     key={label}
-                    className={`flex items-center gap-2.5 px-3 py-2 rounded-lg mb-1 cursor-pointer ${
-                      active
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-600 hover:bg-gray-100"
-                    }`}
+                    className={`flex items-center gap-2.5 px-3 py-2 rounded-lg mb-1 cursor-pointer ${active
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-600 hover:bg-gray-100"
+                      }`}
                   >
                     <span className="text-[14px]">{icon}</span>
                     <span className="text-[12px] font-medium">{label}</span>

@@ -55,7 +55,7 @@ export default function CTABanner() {
             backgroundClip: "text",
           }}
         >
-          Start closing more deals today
+          Start landing more offers today
         </motion.h2>
 
         <motion.p
@@ -64,7 +64,7 @@ export default function CTABanner() {
           animate={inView ? "visible" : "hidden"}
           className="text-[17px] text-white/50 leading-relaxed mb-10 max-w-xl mx-auto"
         >
-          Join 25,000+ founders and sales leaders who use Filo to grow faster. Set up in minutes — no credit card required.
+          Join 25,000+ graduates and professionals who use JobEdge to accelerate their careers. Set up in minutes — no credit card required.
         </motion.p>
 
         {/* Email Form */}

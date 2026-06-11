@@ -65,9 +65,9 @@ export default function Navbar() {
     <>
       {/* ── NAVBAR BAR ─────────────────────────────────────────── */}
       <header
-        className={`fixed top-0 left-0 right-0 transition-all duration-300 ${mobileOpen ? "z-[180]" : "z-[200]"} ${
+        className={`fixed top-0 left-0 right-0 transition-all duration-300 py-2 ${mobileOpen ? "z-[180]" : "z-[200]"} ${
           scrolled || mobileOpen
-            ? "bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm"
+            ? "bg-white/80 backdrop-blur-sm border-b border-gray-100 shadow-sm"
             : "bg-transparent border-b border-transparent"
         }`}
       >
@@ -75,7 +75,7 @@ export default function Navbar() {
           <nav className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" onClick={handleLogoClick}>
-              <Image width="69" height="69" src="/logo.png" alt="Logo" />
+              <Image width="80" height="80" src="/logo.png" alt="Logo" />
             </Link>
 
             {/* Desktop Nav */}
